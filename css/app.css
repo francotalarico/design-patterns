@@ -1,0 +1,24 @@
+html, body {
+    font-family: sans-serif, arial;
+}
+
+
+section#game  {
+    display:inline-block;
+}
+
+section#game div.cat {
+    display: inline-block;
+    max-width: 49.8%;
+    position: relative;
+    cursor: pointer;
+}
+
+section#game div.cat div.counter {
+    position: absolute;
+    bottom:20px; right: 20px;
+    font-size: 40px;
+    background: #000;
+    color: #fff;
+    padding:10px 20px;
+}

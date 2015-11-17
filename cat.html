@@ -7,26 +7,22 @@
     <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-    <h1>Cat clicker</h1>
+    <div class="container">
+        <h1>Cat clicker</h1>
+        <hr/>
+    </div>
 
     <section id="game">
-        <div id="cat-list" class="cat">
-            <ul>
-                <li>Gato 1</li>
-                <li>Gato 2</li>
-                <li>Gato 3</li>
-                <li>Gato 4</li>
-                <li>Gato 5</li>
-                <li>Gato 6</li>
-                <li>Gato 7</li>
-                <li>Gato 8</li>
-            </ul>
+        <div class="container">
+            <div class="col-md-6">
+                <h2>Listado de gatos</h2>
+                <ul id="cat-list"></ul>
+            </div>
+
+
+            <div class="col-md-6 cat"></div>
         </div>
 
-        <div class="cat cat-container">
-            <img src="images/cat-2.jpg" alt="Cat 2"/>
-            <div class="counter">0</div>
-        </div>
     </section>
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>

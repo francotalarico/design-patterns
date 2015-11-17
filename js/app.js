@@ -1,13 +1,50 @@
 $(document).ready(function(){
-    var counterCatOne = 0, counterCatTwo = 0;
+    var cats = [
+        {
+            'name': 'Gato 1',
+            'pic': 'images/cat-1.jpg',
+            'counter': 0
+        },
+        {
+            'name': 'Gato 2',
+            'pic': 'images/cat-2.jpg',
+            'counter': 0
+        },
+        {
+            'name': 'Gato 3',
+            'pic': 'images/cat-3.jpg',
+            'counter': 0
+        },
+        {
+            'name': 'Gato 4',
+            'pic': 'images/cat-4.jpg',
+            'counter': 0
+        },
+        {
+            'name': 'Gato 5',
+            'pic': 'images/cat-5.jpg',
+            'counter': 0
+        }
+    ];
 
-    $("section#game div.cat:nth-child(1)").click(function(){
-        counterCatOne++;
-        $("section#game div.cat:nth-child(1) div.counter").html(counterCatOne);
-    });
+    var catStructure = '<div class="panel panel-default"><div class="panel-body"><h2 class="cat-name">%catname%</h2> <img class="cat-picture" src="%catpicture%" alt="%catname%"/> <div class="counter">%counter%</div> </div> </div>';
 
-    $("section#game div.cat:nth-child(2)").click(function(){
-        counterCatTwo++;
-        $("section#game div.cat:nth-child(2) div.counter").html(counterCatTwo);
-    });
+    // List
+    for(var cat in cats){
+
+        var elem = document.createElement('li');
+        elem.textContent = cats[cat].name;
+
+        elem.addEventListener('click', (function(currentCat) {
+            return function() {
+                var withName = catStructure.replace("%catname%", currentCat.name);
+                var withPic = withName.replace("%catpicture%", currentCat.pic);
+                var cat = withPic.replace("%counter%", currentCat.counter);
+
+                $(".cat").html(cat);
+            };
+        })(cats[cat]));
+
+        $("#cat-list").append(elem);
+    }
 });
